@@ -1,0 +1,11 @@
+[
+    {
+        "code": "a code of Google Meet",
+        "join_msg": "早安安",
+        "start": "2022-04-13_15:32:00",
+        "end": "2022-04-03_15:35:00",
+        "repeat": {
+            "minutes": 2
+        }
+    }
+]

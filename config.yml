@@ -1,0 +1,3 @@
+driver:
+  path: drivers/chromedriver.exe
+  start_page: https://google.com/
