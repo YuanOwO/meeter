@@ -1,12 +1,12 @@
 import logging, re, time
 from datetime import datetime, timedelta
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from .global_var import global_vars as gl
+from global_var import global_vars as gl
 
 class Meet:
     def __init__(self, meeter, code: str, join_msg: str = '早安安',
@@ -29,7 +29,7 @@ class Meet:
         self._joined = False
         self._start_time = self._to_datetime(start_time)
         self._end_time = self._to_datetime(end_time)
-        self._repeat = timedelta(**repeat)
+        self._repeat = timedelta(**repeat) if repeat else None
     
     def __repr__(self) -> str:
         return f'<Meet code={self._code}>'
@@ -57,11 +57,11 @@ class Meet:
     
     @property
     def repeat(self):
-        return {
-            'days': self._repeat.days,
-            'seconds': self._repeat.seconds,
-            'microseconds': self._repeat.microseconds
-        }
+        return None if self._repeat == None else {
+                'days': self._repeat.days,
+                'seconds': self._repeat.seconds,
+                'microseconds': self._repeat.microseconds
+            }
     @repeat.setter
     def repeat(self, time: dict|timedelta):
         if isinstance(time, dict):

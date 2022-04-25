@@ -2,7 +2,7 @@ import logging, os
 from selenium import webdriver
 from selenium.webdriver.chrome.service  import Service as ChromeService
 
-from .global_var import global_vars as gl
+from global_var import global_vars as gl
 
 def chrome():
     logging.info('Creating browser driver...')

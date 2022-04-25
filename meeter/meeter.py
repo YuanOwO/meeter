@@ -1,4 +1,4 @@
-import logging, time
+import logging, sys, time
 from datetime import datetime
 import json
 from selenium.common.exceptions import TimeoutException
@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from .global_var import global_vars as gl
+from global_var import global_vars as gl
 from .driver import chrome
 from .meet import Meet
 
@@ -18,12 +18,16 @@ class Meeter:
             self._driver = chrome()
         except:
             logging.exception('Some error happened')
-            exit(1)
-        self._isclose = False
-        self.load_meetings()
+            sys.exit(1)
         print('press Ctrl + C to stop this program.')
-        self.login(identifier, password)
-        self.check_meetings()
+        try:
+            self._isclose = False
+            self.load_meetings()
+            self.login(identifier, password)
+            self.check_meetings()
+        except:
+            logging.exception('Unknown error happened')
+            sys.exit(1)
     
     @property
     def isclose(self):
@@ -100,7 +104,7 @@ class Meeter:
         self._isclose = True
         logging.info('Stopped the Meeter')
         print('Stopped the Meeter')
-        exit()
+        sys.exit(1)
     
     def set_meeting(self, meet, **kwargs):
         if not isinstance(meet, Meet):
