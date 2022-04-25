@@ -1,9 +1,10 @@
 # meeter
 Google Meet 自動化  
-*開發中，尚不穩定*
+*開發中，仍不穩定*  
+
 
 ## 使用方法
-1.  下載 chromedriver，預設放置於 `drivers` 資料夾，  **目前僅支援 chrome 瀏覽器**
+1.  下載 chromedriver，預設放置於 `drivers` 資料夾，**目前僅支援 chrome 瀏覽器**
     1.  在 [chrome://settings/help](chrome://settings/help) 檢查 Google Chrome 版本，
     2.  下載相同版本的 Chromedirver，連結: [https://chromedriver.chromium.org/](https://chromedriver.chromium.org/)
 2.  調整設定檔
@@ -31,4 +32,4 @@ Google Meet 自動化
 
 ## 注意事項
 *   目前正在開發中，不太穩定，可能發生未知錯誤，且功能不完善
-*   目前僅測試可於 Windows 10 及 Windows 11 執行，不確定其他作業系統是否能正常運行。
+*   目前僅測試可於 Windows 10 運行，不確定其他作業系統是否能正常運行。
