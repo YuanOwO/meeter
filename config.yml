@@ -1,3 +1,18 @@
+account:
+  identifier: your email
+  password: your password
+
 driver:
   path: drivers/chromedriver.exe
   start_page: https://google.com/
+  options:
+    arguments:
+      - --disable-infobars
+      - --start-maximized
+    experimental_option:
+      prefs:
+        profile.default_content_setting_values:
+          geolocation: 2
+          media_stream_mic: 2
+          media_stream_camera: 2
+          notifications: 2

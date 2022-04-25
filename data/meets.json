@@ -1,11 +1,22 @@
 [
     {
-        "code": "a code of Google Meet",
-        "join_msg": "早安安",
-        "start": "2022-04-13_15:32:00",
-        "end": "2022-04-03_15:35:00",
+        "code": "Google Meet 代碼",
+        "join_msg": "加入時發送的訊息",
+        "start_time": "開始時間(年-月-日_時:分:秒)",
+        "end_time": "結束時間"
+    },
+    {
+        "code": "123-4567-abc",
+        "start_time": "1990-01-01:_00:00:00",
+        "end_time": "1990-01-01:_00:05:00",
         "repeat": {
-            "minutes": 2
+            "week": 0,
+            "days": 7,
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 0,
+            "milliseconds": 0,
+            "microsecond": 0
         }
     }
 ]

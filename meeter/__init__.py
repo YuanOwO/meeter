@@ -1,2 +1,2 @@
 from .meeter import Meeter
-from .meet import Meet
+from .global_var import global_vars as gl
